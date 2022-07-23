@@ -15,3 +15,11 @@ class Product():
             'created_at' : int(datetime.now().timestamp()),
             'updated_at': int(datetime.now().timestamp())
         })
+        
+    @staticmethod
+    def find():
+        db = conn_mongodb()
+        products = db.products.find({})
+        
+        return products
+    
